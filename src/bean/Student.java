@@ -1,8 +1,8 @@
 package bean;
 
-public class Teacher extends Person {
+public class Student extends Person {
     private String schoolName;
-    private double salary;
+    private double scholarship;
 
     public String getSchoolName() {
         return schoolName;
@@ -12,12 +12,12 @@ public class Teacher extends Person {
         this.schoolName = schoolName;
     }
 
-    public double getSalary() {
-        return salary;
+    public double getScholarship() {
+        return scholarship;
     }
 
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setScholarship(double scholarship) {
+        this.scholarship = scholarship;
     }
 
     @Override
