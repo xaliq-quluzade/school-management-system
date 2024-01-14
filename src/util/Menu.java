@@ -1,5 +1,6 @@
 package util;
 
+import bean.Config;
 import service.menu.*;
 import service.menu.inter.MenuService;
 
@@ -40,7 +41,13 @@ public enum Menu {
         Menu[] menuItems = Menu.values();
         for (int i = 0; i < menuItems.length; i++) {
             if (menuItems[i] != UNKNOWN) {
-                System.out.println(menuItems[i]);
+                if ((menuItems[i] == LOGIN || menuItems[i] == REGISTER)) {
+                    if (!Config.isLoggedIn()) {
+                        System.out.println(menuItems[i]);
+                    }
+                } else if (Config.isLoggedIn()) {
+                    System.out.println(menuItems[i]);
+                }
             }
         }
     }
@@ -55,6 +62,8 @@ public enum Menu {
 
     public void process() {
         service.process();
+
+        MenuUtil.showMenu();
     }
 
     public int getNumber() {

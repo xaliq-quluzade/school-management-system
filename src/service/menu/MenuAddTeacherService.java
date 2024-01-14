@@ -10,9 +10,11 @@ public class MenuAddTeacherService implements MenuAddTeacherServiceInter {
     @Override
     public void process() {
         Scanner sc = new Scanner(System.in);
+        System.out.print("name:");
         String name = sc.nextLine();
 
         Scanner sc2 = new Scanner(System.in);
+        System.out.print("surname:");
         String surname = sc2.nextLine();
 
         Teacher t = new Teacher();
@@ -21,5 +23,6 @@ public class MenuAddTeacherService implements MenuAddTeacherServiceInter {
         t.setSurname(surname);
 
         Config.getInstance().appendTeacher(t);
+        System.out.println("student added");
     }
 }

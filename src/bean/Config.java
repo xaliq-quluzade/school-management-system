@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Config implements Serializable {
     private static Config c = null;
+    private static boolean loggedIn;
     private Teacher[] teachers = new Teacher[0];
     private Student[] students = new Student[0];
 
@@ -12,6 +13,14 @@ public class Config implements Serializable {
             c = new Config();
         }
         return c;
+    }
+
+    public static boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public static void setLoggedIn(boolean loggedIn) {
+        Config.loggedIn = loggedIn;
     }
 
     public Student[] getStudents() {

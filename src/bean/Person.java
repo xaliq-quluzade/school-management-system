@@ -3,7 +3,7 @@ package bean;
 import java.io.Serializable;
 
 public abstract class Person implements Serializable {
-    
+
     private String name;
     private String surname;
     private int age;
@@ -39,5 +39,10 @@ public abstract class Person implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "name=" + this.getName() + ", surname=" + this.getSurname();
     }
 }

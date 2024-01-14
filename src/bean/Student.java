@@ -19,11 +19,4 @@ public class Student extends Person {
     public void setScholarship(double scholarship) {
         this.scholarship = scholarship;
     }
-
-    @Override
-    public String toString() {
-        return
-                "name='" + this.getName() + '\'' +
-                        ", surname=" + this.getSurname();
-    }
 }

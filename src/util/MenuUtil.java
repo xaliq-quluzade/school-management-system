@@ -3,7 +3,7 @@ package util;
 import java.util.Scanner;
 
 public class MenuUtil {
-    public static Menu showMenu() {
+    public static void showMenu() {
         System.out.println("Please selected menu");
 
         Menu.show();
@@ -11,10 +11,7 @@ public class MenuUtil {
         Scanner sc = new Scanner(System.in);
         int selectedMenu = sc.nextInt();
 
-        return Menu.find(selectedMenu);
-    }
-
-    public static void processMenu(Menu menu) {
-        menu.process();
+        Menu m = Menu.find(selectedMenu);
+        m.process();
     }
 }

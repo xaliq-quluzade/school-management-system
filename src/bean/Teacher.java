@@ -20,10 +20,4 @@ public class Teacher extends Person {
         this.salary = salary;
     }
 
-    @Override
-    public String toString() {
-        return
-                "name='" + this.getName() + '\'' +
-                        ", surname=" + this.getSurname();
-    }
 }
