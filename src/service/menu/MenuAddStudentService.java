@@ -25,5 +25,7 @@ public class MenuAddStudentService implements MenuAddStudentServiceInter {
 
         Config.getInstance().appendStudent(s);
         System.out.println("student added");
+
+        Config.save();
     }
 }

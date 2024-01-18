@@ -1,5 +1,7 @@
 package bean;
 
+import util.FileUtil;
+
 import java.io.Serializable;
 
 public class Config implements Serializable {
@@ -13,6 +15,22 @@ public class Config implements Serializable {
             c = new Config();
         }
         return c;
+    }
+
+    public static void initialize() {
+        Object obj = FileUtil.readFile("app.obj");
+
+        if (obj == null) {
+            return;
+        }
+
+        if (obj instanceof Config) {
+            c = (Config) obj;
+        }
+    }
+
+    public static void save() {
+        FileUtil.writeFile(Config.getInstance(), "app.obj");
     }
 
     public static boolean isLoggedIn() {
@@ -56,4 +74,5 @@ public class Config implements Serializable {
         newTeachers[newTeachers.length - 1] = t;
         teachers = newTeachers;
     }
+
 }
